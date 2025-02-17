@@ -55,7 +55,7 @@ farm_monitoring/
 ├── app.py                 # Main Flask application
 ├── config.py             # Configuration settings
 ├── agents.py             # AI agent definitions
-├── data_processor.py     # Core data processing logic
+├── tasks.py     # Core data processing logic
 └── templates/
     └── index.html        # Web dashboard template
 ```
@@ -125,21 +125,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - LangChain for LLM integration
 - Flask team for the web framework
 - LM Studio for local LLM hosting
-
-## Support
-
-For support, please open an issue in the GitHub repository or contact the maintainers at:
-- Email: your.email@example.com
-- Twitter: [@yourusername](https://twitter.com/yourusername)
-
-## Roadmap
-
-- [ ] Add support for more crop types
-- [ ] Implement weather API integration
-- [ ] Add historical data visualization
-- [ ] Develop mobile application
-- [ ] Add alert system for critical conditions
-- [ ] Implement machine learning for improved decision making
-
----
-Made with ❤️ by [Your Name](https://github.com/LokmanAdh)
