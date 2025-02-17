@@ -2,8 +2,6 @@
 
 An intelligent farm monitoring system that uses AI agents to automate irrigation decisions based on real-time sensor data. The system employs three specialized agents (Sensor, Decision, and Actuator) to collect data, make decisions, and control irrigation systems.
 
-![Farm Monitoring Dashboard](https://raw.githubusercontent.com/yourusername/farm-monitoring/main/docs/dashboard.png)
-
 ## Features
 
 - 🌱 Real-time monitoring of multiple plants/crops
@@ -57,7 +55,6 @@ farm_monitoring/
 ├── app.py                 # Main Flask application
 ├── config.py             # Configuration settings
 ├── agents.py             # AI agent definitions
-├── llm.py               # Language model setup
 ├── data_processor.py     # Core data processing logic
 └── templates/
     └── index.html        # Web dashboard template
