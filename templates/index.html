@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Farm Sensor Data</title>
+     <style>
+       body { font-family: Arial, sans-serif; margin: 20px; }
+       h1 { color: #2C3E50; }
+       h2 { color: #16A085; }
+       pre { background: #ecf0f1; padding: 10px; }
+     </style>
+  </head>
+  <body>
+     <h1>Farm Sensor Data</h1>
+     <div id="sensor-data">
+       <!-- Sensor data will be dynamically inserted here -->
+     </div>
+     <script>
+       function fetchSensorData() {
+         fetch('/data')
+           .then(response => response.json())
+           .then(data => {
+             let container = document.getElementById('sensor-data');
+             let html = '';
+             for (let plant_id in data) {
+               let sensor = data[plant_id];
+               html += `<h2>${plant_id} - ${sensor.plant}</h2>`;
+               html += `<pre>`;
+               html += `Temperature: ${sensor.temperature}°C\n`;
+               html += `Humidity: ${sensor.humidity}%\n`;
+               html += `Wind Speed: ${sensor.wind_speed} km/h\n`;
+               html += `Solar Radiation: ${sensor.solar_radiation} W/m²\n`;
+               html += `Rainfall: ${sensor.rainfall} mm\n`;
+               html += `Soil Moisture: ${sensor.soil_moisture}% (${sensor.soil_status})\n`;
+               html += `Canopy Temperature: ${sensor.canopy_temperature}°C\n`;
+               html += `Plant: ${sensor.plant} (Size: ${sensor.plant_size})\n`;
+               html += `Water Tank: ${sensor.water_tank.remaining}L remaining / ${sensor.water_tank.capacity}L capacity\n`;
+               html += `</pre>`;
+             }
+             container.innerHTML = html;
+           })
+           .catch(error => console.error('Error fetching sensor data:', error));
+       }
+       setInterval(fetchSensorData, 5000);
+       window.onload = fetchSensorData;
+     </script>
+  </body>
+</html>
